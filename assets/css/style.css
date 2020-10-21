@@ -1051,4 +1051,25 @@ footer.footer-contact  {
 }
 
 
+/*===================================
+=            MEDIA QUERY          =
+===================================*/
+
+@media only screen and (max-width: 767px) {
+    #gtco-reservation {
+        height: 327px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #footer {
+        text-align: center;
+    }
+    
+    footer .nav-mastfoot {
+    display: inline-flex;
+    }   
+}
+
+
 
