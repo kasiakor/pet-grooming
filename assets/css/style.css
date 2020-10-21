@@ -1050,7 +1050,31 @@ footer.footer-contact  {
     font-size: 17px;
 }
 
+/*===================================
+=            JUICER         =
+===================================*/
 
+.juicer-feed .j-paginate {
+    border: 2px solid #b49a7c!important;
+    color: #b49a7c!important;
+}
+
+.juicer-feed .j-paginate:hover {
+    background: #b49a7c!important;
+    color: #ffffff!important;
+}
+
+.j-loading {
+ border-color: #b49a7c!important;
+}
+
+.j-loading:before {
+ background-color: #b49a7c!important;
+}
+
+.sidebar {
+    margin-top: 47px;
+}
 /*===================================
 =            MEDIA QUERY          =
 ===================================*/
