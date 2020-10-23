@@ -898,6 +898,10 @@ img.w-100 {
     border-radius: 12px;
 }
 
+.card-item {
+    margin-bottom: 20px;
+}
+
 /*============================
 =        NEWS          =
 ============================*/
@@ -1084,6 +1088,10 @@ footer.footer-contact  {
 @media only screen and (max-width: 767px) {
     #gtco-reservation {
         height: 327px;
+    }
+    
+    .row-gallery {
+        margin: 0!important;
     }
 }
 
