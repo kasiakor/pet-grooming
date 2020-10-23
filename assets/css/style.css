@@ -650,7 +650,8 @@ footer .copyright p a {
 .article-pg header {
   padding-bottom: 0; }
   .article-pg header .bg-cover {
-    padding-bottom: 100px; }
+    padding-bottom: 100px;
+margin-bottom: 20px;}
 .article-pg .breadc {
   max-width: 150px; }
   .article-pg .breadc .nav-item .nav-link {
@@ -1091,7 +1092,7 @@ footer.footer-contact  {
     }
     
     .row-gallery {
-        margin: 0!important;
+        margin: 100px 0 0 0!important;
     }
 }
 
