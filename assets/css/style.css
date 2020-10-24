@@ -1072,6 +1072,7 @@ footer.footer-contact  {
 
 .crt-post .crt-post-text {
     font-family: "Roboto-Regular";
+    color: #444444;
 }
 
 .crt-widget .crt-load-more {
@@ -1082,11 +1083,16 @@ footer.footer-contact  {
     border-radius: 12px;
     font-family: "Montserrat-Bold";
     text-transform: uppercase;
+    box-shadow: none!important;
 }
 
 .crt-widget .crt-load-more:hover {
     background: #ffffff!important;
     color: #b49a7c!important;
+}
+
+.crt-widget .crt-load-more:focus {
+    outline: none!important;
 }
 
 /*
