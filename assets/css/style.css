@@ -1058,9 +1058,37 @@ footer.footer-contact  {
 }
 
 /*===================================
-=            JUICER         =
+=            CURATOR       =
 ===================================*/
 
+.crt-post .crt-post-footer .crt-post-share {
+    display: none;
+}
+
+.crt-widget .crt-post-fullname a {
+    color: #b49a7c!important;
+}
+
+.crt-post .crt-post-text {
+    font-family: "Roboto-Regular";
+}
+
+.crt-widget .crt-load-more {
+    border: 2px solid #b49a7c!important;
+    color: #ffffff!important;
+    background: #b49a7c!important;
+    padding: 10px;
+    border-radius: 12px;
+    font-family: "Montserrat-Bold";
+    text-transform: uppercase;
+}
+
+.crt-widget .crt-load-more:hover {
+    background: #ffffff!important;
+    color: #b49a7c!important;
+}
+
+/*
 .juicer-feed .j-paginate {
     border: 2px solid #b49a7c!important;
     color: #b49a7c!important;
@@ -1082,6 +1110,7 @@ footer.footer-contact  {
 .sidebar {
     margin-top: 47px;
 }
+*/
 /*===================================
 =            MEDIA QUERY          =
 ===================================*/
