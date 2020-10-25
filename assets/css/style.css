@@ -1050,6 +1050,10 @@ footer.footer-contact  {
     margin: 15px 0;
 }
 
+.contact.article-pg header .bg-cover {
+    margin-bottom: 0!important;
+}
+
 .telephone p, .email p, website a {
     display: inline-block;
     text-align: right;
