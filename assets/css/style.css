@@ -74,7 +74,8 @@ header {
   header h2.logo {
     font-size: 75px;
     font-family: "Angeline_Vintage";
-    color: #ffffff; }
+    color: #ffffff;
+    padding-bottom: 20px;}
   header .nav-link {
     padding: 0.5rem;}
   header .nav-fill {
