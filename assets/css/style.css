@@ -1054,6 +1054,10 @@ footer.footer-contact  {
     margin-bottom: 0!important;
 }
 
+.section-content {
+    margin-top: 27px;  
+}
+    
 .telephone p, .email p, website a {
     display: inline-block;
     text-align: right;
@@ -1069,7 +1073,7 @@ footer.footer-contact  {
     padding-top: 10px;
 }
 
-.website a, .contact i {
+.website a {
    color: #B49A7C;
    font-weight: bold;
 }
