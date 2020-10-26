@@ -3,7 +3,7 @@
 * 	Template Style 
 *
 * ======================================================= */
- 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,6 +20,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0; }
 
+
 @font-face {
   font-family: "Angeline_Vintage";
   src: url(../fonts/Angeline_Vintage.ttf); }
@@ -34,7 +35,8 @@ time, mark, audio, video {
   src: url(../fonts/Roboto-Italic.ttf); }
 body {
   font-family: "Roboto-Regular";
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #B49A7C;}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat-Bold"; }
@@ -927,9 +929,11 @@ header .col-md-3 h5 {
 }
 
 .wrapper {
+    box-sizing: border-box;
     max-width: 1300px; 
     height: 100%; 
     margin: 0 auto !important;
+    background-color: #ffffff;
 }
 
 /*============================
