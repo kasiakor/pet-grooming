@@ -1178,12 +1178,12 @@ footer.footer-contact  {
     }
     
     footer .nav-mastfoot {
-    display: inline-flex;
+        display: inline-flex;
     }
     
     footer ul.open-hours li {
-    max-width: 200px!important;
-    margin: auto!important;
+        max-width: 200px!important;
+        margin: auto!important;
     }
 }
 
