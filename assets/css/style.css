@@ -1185,6 +1185,10 @@ footer.footer-contact  {
         max-width: 200px!important;
         margin: auto!important;
     }
+    
+    .h-100 {
+        height: auto!important;
+    }
 }
 
 
