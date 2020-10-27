@@ -1160,7 +1160,7 @@ footer.footer-contact  {
 
 @media only screen and (max-width: 767px) {
     #gtco-reservation {
-        height: 327px;
+        height: 400px;
     }
     
     .row-gallery {
@@ -1179,7 +1179,12 @@ footer.footer-contact  {
     
     footer .nav-mastfoot {
     display: inline-flex;
-    }   
+    }
+    
+    footer ul.open-hours li {
+    max-width: 200px!important;
+    margin: auto!important;
+    }
 }
 
 
