@@ -935,12 +935,12 @@ header .col-md-3 h5 {
     background-color: #ffffff;
 }
 
-header .card a:hover, .ar-content a:hover, .crt-load-more:hover {
+header .card a:hover, .ar-content a:hover, .crt-load-more:hover, .item-cat:hover h6  {
     text-shadow: none!important;
 }
 
 
-header .card a, .ar-content a.btn, .crt-load-more  {
+header .card a, .ar-content a.btn, .crt-load-more, .item-cat h6 {
     text-shadow: 0px 0px 1px #000, 0px 0px 0px #000, 0px 0px 0px #000, 0px 0px 1px #000, 0px 0px 1px #000, 0px 0px 0px #000;
 }
 
@@ -952,9 +952,6 @@ header .card a, .ar-content a.btn, .crt-load-more  {
 /*============================
 =        PRODUCTS            =
 ============================*/
-.item-cat h6 {
-    text-shadow: 2px 2px 2px #444444;
-}
 
 a.btn-store:hover .item-cat h6 {
     text-shadow: none!important;
