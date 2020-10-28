@@ -936,12 +936,12 @@ header .col-md-3 h5 {
     background-color: #ffffff;
 }
 
-header .card a:hover {
+header .card a:hover, .ar-content a:hover, .crt-load-more:hover {
     text-shadow: none!important;
 }
 
 
-header .card a {
+header .card a, .ar-content a.btn, .crt-load-more  {
     text-shadow: 0px 0px 1px #000, 0px 0px 0px #000, 0px 0px 0px #000, 0px 0px 1px #000, 0px 0px 1px #000, 0px 0px 0px #000;
 }
 
