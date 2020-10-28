@@ -900,7 +900,6 @@ margin-bottom: 20px;}
 
 img.w-100 {
     border: 4px solid #b9a793;
-    border-radius: 12px;
 }
 
 .card-item {
@@ -1014,6 +1013,35 @@ a.store-link {
     height: 110px; }
     .team-card:hover .team-desc .team-social-links {
       opacity: 1; }
+
+.img-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    font-weight: 100;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.spin {
+    position: relative;
+    text-align: center;
+}
+
+#spin-img {
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    animation: rotation 20s infinite linear;
+}
+
+@keyframes rotation {
+  100%{
+    transform:rotate(360deg);
+  }
+}
 
 .team-desc {
   position: absolute;
