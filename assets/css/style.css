@@ -39,7 +39,7 @@ body {
   background-color: #B49A7C;}
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat-Bold"; }
+  font-family: "Roboto-Regular";}
 
 .container-fluid {
   padding: 0; }
@@ -408,7 +408,8 @@ header {
   font-size: 18px;
   color: #333333;
   margin-top: 5px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  font-family: "Montserrat-Bold";}
 .vr-gallery .cus-pd {
   padding: 50px 55px 10px 55px; }
 .vr-gallery .cus-pd2 {
@@ -719,7 +720,8 @@ margin-bottom: 20px;}
   .ar-content h3 {
     color: #B49A7C;
     font-size: 18px;
-    margin-top: 30px;}
+    margin-top: 30px;
+    font-weight: 900;}
   .ar-content .nav-fill {
     max-width: 200px; }
     .ar-content .nav-fill a {
