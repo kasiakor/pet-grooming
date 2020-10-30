@@ -956,7 +956,8 @@ header .card a, .ar-content a.btn, .crt-load-more, .item-cat h6 {
 ============================*/
 
 a.btn-store {
-    width: fit-content;
+    display: inline;
+    padding: 10px 15px;
 }
 a.btn-store:hover .item-cat h6 {
     text-shadow: none!important;
@@ -992,7 +993,6 @@ a.btn-store:hover .item-cat h6 {
 a.btn-store {
     margin: auto;
     width: fit-content;
-    border-radius: 12px;
 }
 
 a.store-link {
@@ -1160,8 +1160,7 @@ footer.footer-contact  {
     border: 2px solid #b49a7c!important;
     color: #ffffff!important;
     background: #b49a7c!important;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 10px 15px;
     font-family: "Montserrat-Bold";
     text-transform: uppercase;
     box-shadow: none!important;
