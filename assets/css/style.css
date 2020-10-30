@@ -955,9 +955,13 @@ header .card a, .ar-content a.btn, .crt-load-more, .item-cat h6 {
 =        PRODUCTS            =
 ============================*/
 
+a.btn-store {
+    width: fit-content;
+}
 a.btn-store:hover .item-cat h6 {
     text-shadow: none!important;
 }
+
 .menus:hover img {
   transform: scale(1.1, 1.1); }
 
