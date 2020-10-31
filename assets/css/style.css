@@ -909,6 +909,10 @@ img.w-100 {
     margin-bottom: 20px;
 }
 
+img.img-footprint {
+    transform: rotate(15deg);
+}
+
 /*============================
 =        NEWS          =
 ============================*/
