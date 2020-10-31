@@ -105,7 +105,8 @@ header {
     header .card h2 {
       font-size: 40px;
       max-width: 510px;
-      margin: 20px auto; }
+      margin: 20px auto;
+      text-shadow: 2px 2px black;}
     @media (max-width: 1299px) {
       header .card h2 {
         font-size: 24px; }
@@ -928,7 +929,7 @@ header .col-md-3 h5 {
     background: rgba(0,0,0,.5);
     padding: 10px;
 }
-
+   
 .wrapper {
     box-sizing: border-box;
     max-width: 1300px; 
