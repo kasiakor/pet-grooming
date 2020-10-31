@@ -739,7 +739,7 @@ margin-bottom: 20px;}
 /*    border-radius: 0;*/
     font-family: "Montserrat-Bold";
     font-size: 12px;
-    display: block;
+/*    display: block;*/
     border-color: #B49A7C;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
