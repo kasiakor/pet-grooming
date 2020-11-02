@@ -373,12 +373,12 @@ header {
       box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.48);
       width: 41px;
       height: 41px;
-      margin-left: -20px;
+      margin-left: -15px;
       font-size: 12px !important; }
     .video-player .owl-nav .owl-next {
       right: 0;
       float: right;
-      margin-right: -20px; }
+      margin-right: -15px; }
 
 .light-bg {
   background: #f7f7f7; }
