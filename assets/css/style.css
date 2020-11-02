@@ -1257,6 +1257,10 @@ footer.footer-contact  {
         max-width: 200px!important;
         margin: auto!important;
     }
+    
+    .overlay-item.card-img-overlay, .vr-gallery .contact-box {
+        position: inherit;
+    }
 }
 
 
