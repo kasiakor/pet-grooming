@@ -151,7 +151,7 @@
     <h3 style="margin-bottom: 20px;">We remain open</h3>
     <p>Ealing Pet Shop and Grooming Salon will remain open to provide essential retail  &amp; services to our community.</p>
     <hr>
-    <button onclick="myFunction()" class="btn btn-primary" style="margin-top: 20px;">CLOSE</button>
+    <button id="btn-close" class="btn btn-primary" style="margin-top: 20px;">CLOSE</button>
     </div>
 </div>
     <ul class="lightrope">
@@ -470,10 +470,10 @@
         <script src="assets/js/jquery.yu2fvl.js"></script>
         <script src="assets/js/main.js"></script>
         <script>
-        function myFunction() {
-          document.getElementById("banner").hidden = true;
-        }
-    </script>
+            document.getElementById("btn-close").addEventListener('click', function () {
+                document.getElementById("banner").hidden = true;
+            });
+        </script>
     </div>
 </body>
 
