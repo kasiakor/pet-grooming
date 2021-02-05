@@ -25,121 +25,44 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="assets/js/jquery-1.12.0.min.js"></script>
     <style>
-/* customizable snowflake styling */
-.snowflake {
-  color: #fff;
-  font-size: 1em;
-  font-family: Arial, sans-serif;
-  text-shadow: 0 0 5px #000;
+.wrapper {
+	 color: #f1273b;
+	 text-shadow: 0 0 40px pink;
 }
-
-@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
-        
-        
- .lightrope {
-	 text-align: center;
-	 white-space: nowrap;
-	 overflow: hidden;
-	 position: absolute;
-	 z-index: 1;
-	 margin: -15px 0 0 0;
-	 padding: 0;
-	 pointer-events: none;
-	 width: 100%;
+ .bubbling-heart div {
+	 position: fixed;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%,25vh) scale(0);
+	 animation: bubbleUp 10s infinite;
+	 opacity: 0;
 }
- .lightrope li {
-	 position: relative;
-	 animation-fill-mode: both;
-	 animation-iteration-count: infinite;
-	 list-style: none;
-	 margin: 0;
-	 padding: 0;
-	 display: block;
-	 width: 12px;
-	 height: 28px;
-	 border-radius: 50%;
-	 margin: 20px;
-	 display: inline-block;
-	 background: rgba(0, 247, 165, 1);
-	 box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
-	 animation-name: flash-1;
-	 animation-duration: 2s;
+ .bubbling-heart div .fa {
+	 transform: translateX(12.5vw) rotate(25deg);
+	 animation: oscillate 30s ease-in-out infinite;
 }
- .lightrope li:nth-child(2n+1) {
-	 background: rgba(0, 255, 255, 1);
-	 box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.5);
-	 animation-name: flash-2;
-	 animation-duration: 0.4s;
+ .bubbling-heart div .animation-delays(@i:2) when (@i <= @noOfHearts):nth-child() {
+	 animation-delay: - 1*2*0.25s;
 }
- .lightrope li:nth-child(4n+2) {
-	 background: rgba(247, 0, 148, 1);
-	 box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
-	 animation-name: flash-3;
-	 animation-duration: 1.1s;
+ .bubbling-heart div .animation-delays(@i:2) when (@i <= @noOfHearts):nth-child() .fa {
+	 animation-delay: - 1*4*0.25s;
 }
- .lightrope li:nth-child(odd) {
-	 animation-duration: 1.8s;
-}
- .lightrope li:nth-child(3n+1) {
-	 animation-duration: 1.4s;
-}
- .lightrope li:before {
-	 content: "";
-	 position: absolute;
-	 background: #222;
-	 width: 10px;
-	 height: 9.3333333333px;
-	 border-radius: 3px;
-	 top: -4.6666666667px;
-	 left: 1px;
-}
- .lightrope li:after {
-	 content: "";
-	 top: -14px;
-	 left: 9px;
-	 position: absolute;
-	 width: 52px;
-	 height: 18.6666666667px;
-	 border-bottom: solid #222 2px;
-	 border-radius: 50%;
-}
- .lightrope li:last-child:after {
-	 content: none;
-}
- .lightrope li:first-child {
-	 margin-left: -40px;
-}
- @keyframes flash-1 {
-	 0%, 100% {
-		 background: rgba(0, 247, 165, 1);
-		 box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
-	}
+ @keyframes bubbleUp {
 	 50% {
-		 background: rgba(0, 247, 165, 0.4);
-		 box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 0.2);
+		 opacity: 1;
+	}
+	 100% {
+		 transform: translate(-50%,-25vh) scale(2);
 	}
 }
- @keyframes flash-2 {
-	 0%, 100% {
-		 background: rgba(0, 255, 255, 1);
-		 box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 1);
-	}
+ @keyframes oscillate {
 	 50% {
-		 background: rgba(0, 255, 255, 0.4);
-		 box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.2);
+		 transform: translateX(-12.5vw) rotate(-25deg);
 	}
 }
- @keyframes flash-3 {
-	 0%, 100% {
-		 background: rgba(247, 0, 148, 1);
-		 box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
-	}
-	 50% {
-		 background: rgba(247, 0, 148, 0.4);
-		 box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 0.2);
-	}
 </style>
 </head>
 
@@ -154,90 +77,6 @@
     <button id="btn-close" class="btn btn-primary" style="margin-top: 20px;">CLOSE</button>
     </div>
 </div>
-<!--
-    <ul class="lightrope">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-        <div class="snowflakes" aria-hidden="true">
-  <div class="snowflake">
-  ❅
-  </div>
-  <div class="snowflake">
-  ❆
-  </div>
-  <div class="snowflake">
-  ❅
-  </div>
-  <div class="snowflake">
-  ❆
-  </div>
-  <div class="snowflake">
-  ❅
-  </div>
-  <div class="snowflake">
-  ❆
-  </div>
-  <div class="snowflake">
-    ❅
-  </div>
-  <div class="snowflake">
-    ❆
-  </div>
-  <div class="snowflake">
-    ❅
-  </div>
-  <div class="snowflake">
-    ❆
-  </div>
-  <div class="snowflake">
-    ❅
-  </div>
-  <div class="snowflake">
-    ❆
-  </div>
--->
-<!--</div>-->
     <div class="wrapper">
         <header class="mt-0 pt-0">
             <div class="bg-cover clearfix pt-3">
@@ -290,20 +129,20 @@
 
             <div class="row ml-0 mr-0">
                 <div class="col-md-6 pr-0 pl-0">
-                    <div class="card">
-                        <img class="card-img" src="assets/images/front/christgrooming.jpg" alt="Ealing Grooming Salon">
+                    <div class="card mb-4">
+                        <img class="card-img" src="assets/images/front/dogvalentine2.jpeg" alt="Ealing Grooming Salon">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Grooming Salon</h2>
-                            <a href="services.html" aria-label="Read more" class="btn" style="background-color: #be547d">READ MORE</a>
+                            <a href="services.html" aria-label="Read more" class="btn" style="background-color: #f1273b">READ MORE</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 pl-0 pr-0">
-                    <div class="card">
-                          <img class="card-img" src="assets/images/front/christmas.jpeg" alt="Ealing Pet Shop">
+                    <div class="card mb-4">
+                          <img class="card-img" src="assets/images/front/dogvalentine1.jpeg" alt="Ealing Pet Shop">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Pet Shop</h2>
-                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#be547d">SHOP NOW</a>
+                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#f1273b">SHOP NOW</a>
                         </div>
                       
                     </div>
@@ -397,7 +236,7 @@
                                 <img src="assets/images/front/shower.jpg" alt="Dog bath">
                             </div>
                             <div class="col-md-12 col-lg-5 light-bg cus-pd cus-arrow-left">
-                                <p><small>january, 2021</small></p>
+                                <p><small>february, 2021</small></p>
                                 <h3>A soft and fluffy dog is a happy dog!</h3>
                                 <p>
                                     You are probably wondering why dogs are so soft and fluffy after visiting our salon? This is due to the products we using. They are as gentle and safe as Mother Nature. Pet care the way nature intended—with gentle effective ingredients. Formulated for both professional and consumer use.
@@ -419,7 +258,7 @@
                             <img class="card-img h-100" src="assets/images/front/pizzle.jpg" alt="Beef pizzle">
                             <div class="overlay-item card-img-overlay">
                                 <div class="contact-box">
-                                    <p><small>january, 2021</small></p>
+                                    <p><small>february, 2021</small></p>
                                     <h3>Your dog deserves a treat!</h3>
                                     <p>Swedish dog snacks in stylish packaging. Recommended for all sizes and ages. 100% Dried Ox Pizzle Moisture 9.4%, Protein 74.5%, Fat 3.6%. Length of each Lollipup: 20cm. All natural.</p>
                                 </div>
@@ -431,7 +270,7 @@
                         <div class="card">
                             <img class="card-img-top" src="assets/images/front/beds.jpg" alt="Dog beds">
                             <div class="card-body bg-gray cus-pd2 cus-arrow-up">
-                                <p><small>january, 2021</small></p>
+                                <p><small>february, 2021</small></p>
                                 <h3>Beds to love!</h3>
                                 <p>Dogs spend almost half their lives sleeping, so it is important to get them a bed that they will simply love. We offer a wide selection of beds that are comfy, supportive and made to last. All available in the store!</p>
                             </div>
@@ -444,7 +283,7 @@
                                 <img src="assets/images/front/stains.jpg" alt="Dog undereyes stains shampoo">
                             </div>
                             <div class="col-md-12 col-lg-5 light-bg cus-pd cus-arrow-left">
-                                <p><small>january, 2021</small></p>
+                                <p><small>february, 2021</small></p>
                                 <h3>Dirt or stains under your pet's eyes? </h3>
                                 <p>
                                     This mild, concentrated formula has natural exfoliating activity and gently hydrates. The refreshing blend of vanilla and blueberry effectively removes dirt and tear stains, and will not irritate eyes. TropiClean Tear Stain Remover is great for all skin types and pets of all ages. Safe for dogs and cats of all ages (and their humans, too!).
@@ -463,7 +302,14 @@
 
             </div>
         </div>
+        <div class="bubbling-heart">
+            <div><i class="fa fa-heart fa-5x"></i></div>
+            <div><i class="fa fa-heart fa-5x"></i></div>
+            <div><i class="fa fa-heart fa-5x"></i></div>
+            <div><i class="fa fa-heart fa-5x"></i></div>
+        </div>
         <div id="footer"></div>
+         </div>
         <script>$(function(){
         $("#footer").load("footer.html"); 
         })
@@ -479,7 +325,7 @@
                 document.getElementById("banner").hidden = true;
             });
         </script>
-    </div>
+   
 </body>
-
+        
 </html>
