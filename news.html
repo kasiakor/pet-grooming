@@ -24,8 +24,46 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="assets/js/jquery-1.12.0.min.js"></script>
 <style>
+    .valentina {
+        font-size: 40px!important;
+        color: #f1273b!important;
+    }
+    
+    #heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      margin-top: 10px;
+    }
+
+    #heart::before, #heart::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 52px;
+      height: 80px;
+      border-radius: 50px 50px 0 0;
+      background: red;
+    }
+
+    #heart::before {
+      left: 50px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    #heart::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    
+     @media only screen and (max-width: 767px) {
+        #heart { display: none;}
+    }
 /* customizable snowflake styling */
 .snowflake {
   color: #fff;
@@ -150,15 +188,24 @@
                 <div class="row">
                     <div class="col-lg-9 pr-5">
                     <div class="media my-5">
+<!--
                         <div class="q-box d-flex align-items-center justify-content-center"><img
                                 src="assets/images/quote.png" alt=""></div>
+-->
+                        
                         <div class="bbg media-body">
-                             <h5 class="mb-0">Welcome to our Winter Wonderland <span><img width="20" class="img-fluid img-footprint ml-2" src="assets/images/news/snowflake.png" alt="Snowflake"></span>
-                            <span><img width="20" class="img-fluid img-footprint" src="assets/images/news/snowflake.png" alt="Snowflake"></span>
-                                 <span><img width="20" class="img-fluid img-footprint" src="assets/images/news/snowflake.png" alt="Snowflake"></span>
-                            </h5>
+                            <span id="heart"></span>
+                            <h5 class="mb-0 valentina text-center">Happy Valentine’s Day<span style="font-size:100%;color:red; margin-left:30px;">&hearts;</span>
+                          </h5>
                         </div>
                     </div>
+                         <div class="row">
+                            <div class="col-md-6 mx-auto">
+                                <div class="team-card mb-5">
+                                    <img class="img-fluid w-100" src="assets/images/news/doglove.jpeg" alt="Engraving Services">
+                                </div>
+                            </div>
+                        </div>
                           <h3 style="text-align: center;">Engraving Services Available Now!</h3>
                         <p style="text-align: center;">Personalised Engraved Pet Tags<br/>Collect at store or order home delivery</p>
                          <div class="row">
@@ -188,18 +235,6 @@
                             <div class="col-md-6">
                                 <div class="team-card mb-5">
                                     <img class="img-fluid w-100" src="assets/images/news/christmas5.jpg" alt="Christmas Pet Gifts">
-                                </div>
-                             </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-6">
-                                <div class="team-card mb-5">
-                                    <img class="img-fluid w-100" src="assets/images/news/christmas1.jpg" alt="Christmas Pet Gifts">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="team-card mb-5">
-                                    <img class="img-fluid w-100" src="assets/images/news/christmas2.jpg" alt="Christmas Pet Gifts">
                                 </div>
                              </div>
                         </div>
