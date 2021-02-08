@@ -32,38 +32,37 @@
         color: #f1273b!important;
     }
     
-    #heart {
+    .heart {
+      background-color: red;
+      display: inline-block;
+      height: 30px;
+      margin: 0 37px;
       position: relative;
-      width: 100px;
-      height: 90px;
-      margin-top: 10px;
-    }
-
-    #heart::before, #heart::after {
-      content: "";
-      position: absolute;
       top: 0;
-      width: 52px;
-      height: 80px;
-      border-radius: 50px 50px 0 0;
-      background: red;
-    }
-
-    #heart::before {
-      left: 50px;
       transform: rotate(-45deg);
-      transform-origin: 0 100%;
+      width: 30px;
     }
 
-    #heart::after {
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: red;
+      border-radius: 50%;
+      height: 30px;
+      position: absolute;
+      width: 30px;
+    }
+
+    .heart:before {
+      top: -15px;
       left: 0;
-      transform: rotate(45deg);
-      transform-origin: 100% 100%;
+    }
+
+    .heart:after {
+      left: 15px;
+      top: 0;
     }
     
-     @media only screen and (max-width: 767px) {
-        #heart { display: none;}
-    }
 /* customizable snowflake styling */
 .snowflake {
   color: #fff;
@@ -194,8 +193,8 @@
 -->
                         
                         <div class="bbg media-body">
-                            <span id="heart"></span>
-                            <h5 class="mb-0 valentina text-center">Happy Valentine’s Day<span style="font-size:100%;color:red; margin-left:30px;">&hearts;</span>
+                            <div class="heart" style="display:inline-block"></div>
+                            <h5 class="mb-0 valentina text-center">Happy Valentine’s Day<div class="heart" style="display:inline-block"></div>
                           </h5>
                         </div>
                     </div>
