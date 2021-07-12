@@ -925,6 +925,10 @@ img.img-footprint {
 =       iNDEX         =
 ============================*/
 
+.fa-facebook-f:before, .fa-facebook:before {
+    content: "\f39e"!important;
+}
+
 header .col-md-3 h5 {
     position: relative;
     left: 50%;
