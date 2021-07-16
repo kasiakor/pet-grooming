@@ -921,6 +921,13 @@ img.img-footprint {
     margin: 80px 0;
 }
 
+.img-pettag {
+    border-radius: 50%;
+}
+
+.cat-icon {
+    margin-left: 10px;
+}
 /*============================
 =       iNDEX         =
 ============================*/
