@@ -25,8 +25,11 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="assets/js/jquery-1.12.0.min.js"></script>
+    
     <style>
 /*
 .wrapper {
@@ -86,6 +89,20 @@
 </div>
 -->
     <div class="wrapper">
+        <div class="container-spider">
+            <div class="left-spider">
+            <div class="uno"><div class="uno"><div class="uno"><div class="uno"></div></div></div></div>
+            <div class="dos"><div class="dos"><div class="dos"><div class="dos"></div></div></div></div>
+            <div class="tres"><div class="tres"><div class="tres"><div class="tres"></div></div></div></div>
+            <div class="cuatro"><div class="cuatro"><div class="cuatro"><div class="cuatro"></div></div></div></div>
+            </div>
+            <div class="right-spider">
+            <div class="uno"><div class="uno"><div class="uno"><div class="uno"></div></div></div></div>
+            <div class="dos"><div class="dos"><div class="dos"><div class="dos"></div></div></div></div>
+            <div class="tres"><div class="tres"><div class="tres"><div class="tres"></div></div></div></div>
+            <div class="cuatro"><div class="cuatro"><div class="cuatro"><div class="cuatro"></div></div></div></div>
+            </div>
+        </div>
         <header class="mt-0 pt-0">
             <div class="bg-cover clearfix pt-3">
                 <h2 class="logo">Ealing Pet Shop and Grooming Salon</h2>
@@ -134,14 +151,31 @@
                     </nav>
                 </div>
             </div>
-
+            <div class="halloween-wrapper">
+                <div class="image-pumpkin" >
+                <div class="pumpkin">
+                    <div class="stem">⟆</div>
+                    <div class="segment" ></div>
+                    <div class="segment" ></div>
+                    <div class="segment" ></div>
+                    <div class="segment" ></div>
+                    <div class="segment" ></div>
+                    <div class="eye-pumpkin left-pumpkin"></div>
+                    <div class="eye-pumpkin right-pumpkin"></div>
+                    <div class="mouth" ></div>
+                </div>
+                <div class="shadow-pumpkin"></div>
+                <p class="spooky">Happy Halloween!</p>
+                </div>
+            </div>
+            <div id="drop" class="drop"></div>
             <div class="row ml-0 mr-0">
                 <div class="col-md-6 pr-0 pl-0">
                     <div class="card mb-4">
                         <img class="card-img" src="assets/images/front/dogvalentine4.jpg" alt="Ealing Grooming Salon">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Grooming Salon</h2>
-                            <a href="services.html" aria-label="Read more" class="btn" style="background-color: #f1273b">READ MORE</a>
+                            <a href="services.html" aria-label="Read more" class="btn button-halloween" style="background-color: #f1273b">READ MORE</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +184,7 @@
                           <img class="card-img" src="assets/images/front/front_food.jpg" alt="Ealing Pet Shop">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Pet Shop</h2>
-                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#f1273b">SHOP NOW</a>
+                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn button-halloween" style="background-color:#f1273b">SHOP NOW</a>
                         </div>
                       
                     </div>
@@ -333,6 +367,11 @@
         <script>
             document.getElementById("btn-close").addEventListener('click', function () {
                 document.getElementById("banner").hidden = true;
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            $('#drop').hide().delay(3000).fadeIn('slow');
             });
         </script>
    
