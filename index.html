@@ -27,49 +27,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="assets/js/jquery-1.12.0.min.js"></script>
-    <style>
-/*
-.wrapper {
-	 color: #f1273b;
-	 text-shadow: 0 0 40px pink;
-}
- .bubbling-heart div {
-	 position: fixed;
-	 top: 50%;
-	 left: 50%;
-	 transform: translate(-50%,25vh) scale(0);
-	 animation: bubbleUp 10s infinite;
-	 opacity: 0;
-}
- .bubbling-heart div .fa {
-	 transform: translateX(12.5vw) rotate(25deg);
-	 animation: oscillate 30s ease-in-out infinite;
-}
- .bubbling-heart div .animation-delays(@i:2) when (@i <= @noOfHearts):nth-child() {
-	 animation-delay: - 1*2*0.25s;
-}
- .bubbling-heart div .animation-delays(@i:2) when (@i <= @noOfHearts):nth-child() .fa {
-	 animation-delay: - 1*4*0.25s;
-}
- @keyframes bubbleUp {
-	 50% {
-		 opacity: 1;
-	}
-	 100% {
-		 transform: translate(-50%,-25vh) scale(2);
-	}
-}
- @keyframes oscillate {
-	 50% {
-		 transform: translateX(-12.5vw) rotate(-25deg);
-	}
-}
-*/
-</style>
-<script>
+    
+    <!-- Autumn theme -->
+    <script scr="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>  
+
+    <script>
     var monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
     var d = new Date();
-    var n = monthNames[d.getMonth()];</script>
+    var n = monthNames[d.getMonth()];
+    </script>
 </head>
 
 <body>
@@ -85,7 +53,10 @@
     </div>
 </div>
 -->
-    <div class="wrapper">
+     
+    <div class="wrapper autumn-theme">
+        <div id="container">
+        </div>
         <header class="mt-0 pt-0">
             <div class="bg-cover clearfix pt-3">
                 <h2 class="logo">Ealing Pet Shop and Grooming Salon</h2>
@@ -134,14 +105,14 @@
                     </nav>
                 </div>
             </div>
-
+        
             <div class="row ml-0 mr-0">
                 <div class="col-md-6 pr-0 pl-0">
                     <div class="card mb-4">
                         <img class="card-img" src="assets/images/front/dogvalentine4.jpg" alt="Ealing Grooming Salon">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Grooming Salon</h2>
-                            <a href="services.html" aria-label="Read more" class="btn" style="background-color: #f1273b">READ MORE</a>
+                            <a href="services.html" aria-label="Read more" class="btn" style="background-color:#bf2214">READ MORE</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +121,7 @@
                           <img class="card-img" src="assets/images/front/front_food.jpg" alt="Ealing Pet Shop">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Pet Shop</h2>
-                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#f1273b">SHOP NOW</a>
+                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#bf2214">SHOP NOW</a>
                         </div>
                       
                     </div>
@@ -190,7 +161,6 @@
                     </div>
                 </div>
             </div>
-
         </header>
 
        <div class="container-fluid video-player">
@@ -234,8 +204,7 @@
                     </div>
                 </div>
                 <hr>
-
-
+                
 
                 <div class="row vr-gallery">
                     <div class="col-md-8 mb-4">
@@ -303,23 +272,16 @@
                      <div class="col-md-4 pl-4 mb-4">
                         
                         <div class="card">
-                            <img class="card-img h-100" src="assets/images/front/doggiebreath.jpg" alt="Dog breath drops">
+                            <img class="card-img h-100" src="assets/images/front/catcans.jpg" alt="Cat can food">
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-<!--
-        <div class="bubbling-heart">
-            <div><i class="fa fa-heart fa-5x"></i></div>
-            <div><i class="fa fa-heart fa-5x"></i></div>
-            <div><i class="fa fa-heart fa-5x"></i></div>
-            <div><i class="fa fa-heart fa-5x"></i></div>
-        </div>
--->
+    </div>
         <div id="footer"></div>
-         </div>
+         
         <script>$(function(){
         $("#footer").load("footer.html"); 
         })
@@ -335,7 +297,33 @@
                 document.getElementById("banner").hidden = true;
             });
         </script>
+        <script>
+            var falling = true;
+
+            TweenLite.set("#container",{perspective:600})
+
+            var total = 30;
+            var container = document.getElementById("container"),	w = window.innerWidth , h = window.innerHeight;
+            container.style.position = "relative";
+            container.style.zIndex = 1000;
+
+
+
+             for (i=0; i<total; i++){ 
+               var Div = document.createElement('div');
+               TweenLite.set(Div,{attr:{class:'dot'},x:R(0,w),y:R(-200,-150),z:R(-200,200)});
+               container.appendChild(Div);
+               animm(Div);
+             }
+
+             function animm(elm){   
+               TweenMax.to(elm,R(6,15),{y:h+100,ease:Linear.easeNone,repeat:-1,delay:-15});
+               TweenMax.to(elm,R(4,8),{x:'+=100',rotationZ:R(0,180),repeat:-1,yoyo:true,ease:Sine.easeInOut});
+               TweenMax.to(elm,R(2,8),{rotationX:R(0,360),rotationY:R(0,360),repeat:-1,yoyo:true,ease:Sine.easeInOut,delay:-5});
+             };
+
+            function R(min,max) {return min+Math.random()*(max-min)};
+        </script>
    
-</body>
-        
+</body>        
 </html>
