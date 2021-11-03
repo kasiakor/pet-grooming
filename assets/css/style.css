@@ -947,6 +947,18 @@ img.blinking-img {
 .cat-icon {
     margin-left: 10px;
 }
+
+img.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+  position: relative;
+  z-index: 100;
+}
 /*============================
 =       iNDEX         =
 ============================*/
