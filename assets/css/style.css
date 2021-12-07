@@ -86,6 +86,11 @@ header {
       color: #ffffff; }
     header .nav-fill li:hover a {
       color: #B49A7C; }
+
+/*for christmas theme*/
+    header .nav-item, header .navbar-nav {
+        z-index: 1000;
+    }
   header .navbar li.nav-item a.nav-link {
     font-family: "Montserrat-Bold";
     color: #ffffff;
@@ -1272,6 +1277,7 @@ footer.footer-contact  {
 /*===================================
 =            AUTUMN THEME          =
 ===================================*/
+/*
 
 .autumn-theme {
     width: 100%;
@@ -1285,6 +1291,7 @@ footer.footer-contact  {
     background: url(http://www.clipartqueen.com/image-files/red-lobed-fall-clipart-leaf.png);
     background-size: 100% 100%;
 }
+*/
 
 /*===================================
 =            MEDIA QUERY          =

@@ -26,37 +26,94 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="assets/js/jquery-1.12.0.min.js"></script>
     
-    <!-- Autumn theme -->
-    <script scr="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+
+    
+    <script src="assets/js/jquery-1.12.0.min.js"></script>
 
     <script>
     var monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
     var d = new Date();
     var n = monthNames[d.getMonth()];
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" data-deferred="1"></script>
+    
+    <style>
+    .snow {
+	 position: absolute;
+	 z-index: 10;
+	 width: 100%;
+	 height: 100%;
+}
+ .trees {
+	 display: grid;
+	 grid-template-rows: 50% 1fr;
+	 grid-template-columns: 1fr 1fr 1fr;
+	 background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/trees.svg) repeat-x;
+	 position: relative;
+	 width: 100%;
+}
+        
+ .merry {
+	 text-align: center;
+	 grid-row: 1;
+	 grid-column: 2;
+	 align-self: start;
+	 justify-self: start;
+}
+        
+        
+ .merry h1 {
+	 color: #c84257;
+	 font-family: 'Mountains of Christmas', cursive!important;
+	 text-align: center;
+	 font-size: 6rem;
+}
+ .fox {
+	 grid-column: 1;
+	 grid-row: 1;
+	 align-self: end;
+	 justify-self: end;
+     z-index: 0;
+     opacity: 0.9;
+}
+ .tree {
+	 align-self: start;
+	 justify-self: end;
+	 grid-column: 3;
+	 grid-row: 1;
+     z-index: 0;
+     opacity: 0.9;
+}
+        
+@media screen and (max-width: 767px) {
+  .fox, .tree {
+   display: none;
+  }
+}
+ 
+    </style>
 </head>
 
-<body>
-<!--
-<div id="banner" style="padding:15px; text-align:center; position:relative; z-index: 100;">
-    <div class="banner-content">
-    <h1>COVID-19 UPDATE</h1>
-    <hr>
-    <h3 style="margin-bottom: 20px;">We remain open</h3>
-    <p>Ealing Pet Shop and Grooming Salon will remain open to provide essential retail  &amp; services to our community.</p>
-    <hr>
-    <button id="btn-close" class="btn btn-primary" style="margin-top: 20px;">CLOSE</button>
-    </div>
+<body> 
+
+<div class="wrapper">
+    <div id="particles-js" class="snow"></div>
+	<div class="trees">
+		<div class="merry">
+			<h1>Merry Christmas from</h1>
+		</div>
+	<div class="fox">
+		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/critters.svg" width="100%">
+	</div>
+	<div class="tree">
+		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="100%">
+	</div>
 </div>
--->
-     
-    <div class="wrapper autumn-theme">
-        <div id="container">
-        </div>
         <header class="mt-0 pt-0">
             <div class="bg-cover clearfix pt-3">
                 <h2 class="logo">Ealing Pet Shop and Grooming Salon</h2>
@@ -280,6 +337,7 @@
             </div>
         </div>
     </div>
+    
         <div id="footer"></div>
          
         <script>$(function(){
@@ -292,11 +350,115 @@
         <script src="assets/js/owl.carousel.min.js"></script>
         <script src="assets/js/jquery.yu2fvl.js"></script>
         <script src="assets/js/main.js"></script>
+    <script>
+    
+    particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 400,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#fff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+    },
+    "opacity": {
+      "value": 1,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 10,
+      "random": true,
+      "anim": {
+        "enable": false,
+      }
+    },
+    "line_linked": {
+      "enable": false,
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "bottom",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 0.5
+        }
+      },
+      "bubble": {
+        "distance": 100,
+        "size": 4,
+        "duration": 0.3,
+        "opacity": 1,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+    </script>
+<!--
         <script>
             document.getElementById("btn-close").addEventListener('click', function () {
                 document.getElementById("banner").hidden = true;
             });
         </script>
+-->
+<!--
         <script>
             var falling = true;
 
@@ -324,6 +486,7 @@
 
             function R(min,max) {return min+Math.random()*(max-min)};
         </script>
+-->
    
 </body>        
 </html>
