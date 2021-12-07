@@ -74,14 +74,14 @@
 	 font-size: 500%;
 }
  .fox {
-	 grid-column: 1;
-	 grid-row: 1;
-	 align-self: end;
+	 grid-column: 2;
+	 grid-row: 2;
+	 align-self: start;
 	 justify-self: end;
      z-index: 0;
      opacity: 0.9;
 }
- .tree {
+ .tree1 {
 	 align-self: start;
 	 justify-self: end;
 	 grid-column: 3;
@@ -90,8 +90,17 @@
      opacity: 0.9;
 }
         
+.tree2 {
+	 align-self: start;
+	 justify-self: start;
+	 grid-column: 1;
+	 grid-row: 1;
+     z-index: 0;
+     opacity: 0.9;
+}
+        
 @media screen and (max-width: 767px) {
-  .fox, .tree {
+  .fox {
    display: none;
   }
 }
@@ -190,7 +199,10 @@ P.S. через border-image не прокатило: не поддержива�
 	<div class="fox">
 		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/critters.svg" width="100%">
 	</div>
-	<div class="tree">
+	<div class="tree1">
+		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="100%">
+	</div>
+        <div class="tree2">
 		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="100%">
 	</div>
 </div>
