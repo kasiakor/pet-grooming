@@ -43,6 +43,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" data-deferred="1"></script>
     
     <style>
+/*
         .snow {
              position: absolute;
              z-index: 10;
@@ -104,6 +105,7 @@
            display: none;
           }
         }
+*/
 
 
 
@@ -181,13 +183,21 @@
                  -o-transition: 50ms linear;
                     transition: 50ms linear;
         }
-
+        
+        .wrapper-happynewyear {
+            position: absolute;
+            top: 20%;
+            font-size: 3rem;
+            width: 100%;
+        }
+      
     </style>
 </head>
 
 <body> 
 
 <div class="wrapper">
+<!--
     <div id="particles-js" class="snow"></div>
 	<div class="trees">
 		<div class="merry">
@@ -203,12 +213,20 @@
 		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="100%">
 	</div>
 </div>
+-->
         <header class="mt-0 pt-0">
             <div class="bg-cover clearfix pt-3">
+<!--
                 <div class="lights">
                      <div class="christmasLights"></div>
                 </div>
-                <h2 class="logo">Ealing Pet Shop and Grooming Salon</h2>
+-->
+                <canvas id="world"></canvas>
+                <div class="wrapper-happynewyear">
+                    <h2 class="logo" style="color: #c78a25;">Happy New Year 2022</h2>
+                    <h2 class="logo" style="color: #c78a25;">from</h2>
+                </div>
+                <h2 class="logo" style="color: #c78a25; margin-top: 0;">Ealing Pet Shop and Grooming Salon</h2>
                 <nav class="nav nav-fill mx-auto">
                     <li class="nav-item">
                         <a class="nav-link" aria-label="Facebook" href="https://www.facebook.com/ealingpetshop/" target="_blank"><i
@@ -542,42 +560,127 @@
   "retina_detect": true
 });
     </script>
-<!--
-        <script>
-            document.getElementById("btn-close").addEventListener('click', function () {
-                document.getElementById("banner").hidden = true;
-            });
-        </script>
--->
-<!--
-        <script>
-            var falling = true;
+<script>
+    (function() {
+  var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
 
-            TweenLite.set("#container",{perspective:600})
+  NUM_CONFETTI = 350;
 
-            var total = 30;
-            var container = document.getElementById("container"),	w = window.innerWidth , h = window.innerHeight;
-            container.style.position = "relative";
-            container.style.zIndex = 1000;
+  COLORS = [[85, 71, 106], [174, 61, 99], [219, 56, 83], [244, 92, 68], [248, 182, 70]];
 
+  PI_2 = 2 * Math.PI;
 
+  canvas = document.getElementById("world");
 
-             for (i=0; i<total; i++){ 
-               var Div = document.createElement('div');
-               TweenLite.set(Div,{attr:{class:'dot'},x:R(0,w),y:R(-200,-150),z:R(-200,200)});
-               container.appendChild(Div);
-               animm(Div);
-             }
+  context = canvas.getContext("2d");
 
-             function animm(elm){   
-               TweenMax.to(elm,R(6,15),{y:h+100,ease:Linear.easeNone,repeat:-1,delay:-15});
-               TweenMax.to(elm,R(4,8),{x:'+=100',rotationZ:R(0,180),repeat:-1,yoyo:true,ease:Sine.easeInOut});
-               TweenMax.to(elm,R(2,8),{rotationX:R(0,360),rotationY:R(0,360),repeat:-1,yoyo:true,ease:Sine.easeInOut,delay:-5});
-             };
+  window.w = 0;
 
-            function R(min,max) {return min+Math.random()*(max-min)};
-        </script>
--->
+  window.h = 0;
+
+  resizeWindow = function() {
+    window.w = canvas.width = window.innerWidth;
+    return window.h = canvas.height = window.innerHeight - 200;
+  };
+
+  window.addEventListener('resize', resizeWindow, false);
+
+  window.onload = function() {
+    return setTimeout(resizeWindow, 0);
+  };
+
+  range = function(a, b) {
+    return (b - a) * Math.random() + a;
+  };
+
+  drawCircle = function(x, y, r, style) {
+    context.beginPath();
+    context.arc(x, y, r, 0, PI_2, false);
+    context.fillStyle = style;
+    return context.fill();
+     
+  };
+        
+
+  xpos = 0.5;
+
+  document.onmousemove = function(e) {
+    return xpos = e.pageX / w;
+  };
+
+  window.requestAnimationFrame = (function() {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+      return window.setTimeout(callback, 1000 / 60);
+    };
+  })();
+
+  Confetti = (function() {
+    function Confetti() {
+      this.style = COLORS[~~range(0, 5)];
+      this.rgb = "rgba(" + this.style[0] + "," + this.style[1] + "," + this.style[2];
+      this.r = ~~range(2, 6);
+      this.r2 = 2 * this.r;
+      this.replace();
+    }
+
+    Confetti.prototype.replace = function() {
+      this.opacity = 0;
+      this.dop = 0.03 * range(1, 4);
+      this.x = range(-this.r2, w - this.r2);
+      this.y = range(-20, h - this.r2);
+      this.xmax = w - this.r;
+      this.ymax = h - this.r;
+      this.vx = range(0, 2) + 8 * xpos - 5;
+      return this.vy = 0.7 * this.r + range(-1, 1);
+    };
+
+    Confetti.prototype.draw = function() {
+      var _ref;
+      this.x += this.vx;
+      this.y += this.vy;
+      this.opacity += this.dop;
+      if (this.opacity > 1) {
+        this.opacity = 1;
+        this.dop *= -1;
+      }
+      if (this.opacity < 0 || this.y > this.ymax) {
+        this.replace();
+      }
+      if (!((0 < (_ref = this.x) && _ref < this.xmax))) {
+        this.x = (this.x + this.xmax) % this.xmax;
+      }
+      return drawCircle(~~this.x, ~~this.y, this.r, this.rgb + "," + this.opacity + ")");
+    };
+
+    return Confetti;
+
+  })();
+
+  confetti = (function() {
+    var _i, _results;
+    _results = [];
+    for (i = _i = 1; 1 <= NUM_CONFETTI ? _i <= NUM_CONFETTI : _i >= NUM_CONFETTI; i = 1 <= NUM_CONFETTI ? ++_i : --_i) {
+      _results.push(new Confetti);
+    }
+    return _results;
+  })();
+
+  window.step = function() {
+    var c, _i, _len, _results;
+    requestAnimationFrame(step);
+    context.clearRect(0, 0, w, h);
+    _results = [];
+    for (_i = 0, _len = confetti.length; _i < _len; _i++) {
+      c = confetti[_i];
+      _results.push(c.draw());
+    }
+    return _results;
+  };
+
+  step();
+
+}).call(this);
+    </script>
    
 </body>        
 </html>
