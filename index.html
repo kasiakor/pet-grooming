@@ -198,34 +198,8 @@
 <body> 
 
 <div class="wrapper">
-<!--
-    <div id="particles-js" class="snow"></div>
-	<div class="trees">
-		<div class="merry">
-			<h1>Merry Christmas from</h1>
-		</div>
-	<div class="fox">
-		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/critters.svg" width="100%">
-	</div>
-	<div class="tree1">
-		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="100%">
-	</div>
-        <div class="tree2">
-		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25839/tree.svg" width="100%">
-	</div>
-</div>
--->
         <header class="mt-0 pt-0">
             <div class="bg-cover clearfix pt-3">
-<!--
-                <div class="lights">
-                     <div class="christmasLights"></div>
-                </div>
--->
-                <canvas id="world"></canvas>
-                <div class="wrapper-happynewyear">
-                    <h2 class="logo" style="color: #c78a25;">Happy New Year <br/>2022</h2>
-                </div>
                 <h2 class="logo" style="color: #c78a25; margin-top: 20px;">Ealing Pet Shop and Grooming Salon</h2>
                 <nav class="nav nav-fill mx-auto">
                     <li class="nav-item">
@@ -389,9 +363,9 @@
                     </div>
                      <div class="col-md-4 pl-4 mb-4">
                         <div class="card">
-                            <img class="card-img-top" src="assets/images/front/lilysfestivetreats.jpg" alt="festive treats">
+                            <img class="card-img-top" src="assets/images/front/newin.jpg" alt="pet blankets">
                             <div class="card-body bg-gray cus-pd2 cus-arrow-up">
-                                <h3>@lilyskitchenpetfood<span style="margin-left: 10px; color: red;"><i class="fas fa-gift"></i></span></h3>
+                                <h3>Luxury Pet Blankets<span style="margin-left: 10px; color: #244175;"><i class="fas fa-gift"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -411,11 +385,11 @@
 
                     <div class="col-md-4 pl-4 mb-4">
                         <div class="card">
-                            <img class="card-img-top" src="assets/images/front/beds2.jpg" alt="Dog beds">
+                            <img class="card-img-top" src="assets/images/front/petbeds.jpg" alt="Dog beds">
                             <div class="card-body bg-gray cus-pd2 cus-arrow-up">
                                 <p><small><script>document.write(n)</script>, 2022</small></p>
                                 <h3>Beds to love!</h3>
-                                <p>We offer a wide selection of beds that are comfy, supportive and made to last. Discover our Bees Collection from @cathkidston. All available in the store!</p>
+                                <p>We offer a wide selection of beds that are comfy, supportive and made to last. Discover our Luxury Collection from @georgebarclay. All available in the store!</p>
                             </div>
                         </div>
                     </div>
@@ -459,228 +433,6 @@
         <script src="assets/js/owl.carousel.min.js"></script>
         <script src="assets/js/jquery.yu2fvl.js"></script>
         <script src="assets/js/main.js"></script>
-    <script>
-    
-    particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 400,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#fff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-    },
-    "opacity": {
-      "value": 1,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 10,
-      "random": true,
-      "anim": {
-        "enable": false,
-      }
-    },
-    "line_linked": {
-      "enable": false,
-    },
-    "move": {
-      "enable": true,
-      "speed": 6,
-      "direction": "bottom",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "repulse"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 0.5
-        }
-      },
-      "bubble": {
-        "distance": 100,
-        "size": 4,
-        "duration": 0.3,
-        "opacity": 1,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 100,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
-    </script>
-<script>
-    (function() {
-  var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
-
-  NUM_CONFETTI = 350;
-
-  COLORS = [[85, 71, 106], [174, 61, 99], [219, 56, 83], [244, 92, 68], [248, 182, 70]];
-
-  PI_2 = 2 * Math.PI;
-
-  canvas = document.getElementById("world");
-
-  context = canvas.getContext("2d");
-
-  window.w = 0;
-
-  window.h = 0;
-
-  resizeWindow = function() {
-    window.w = canvas.width = window.innerWidth;
-    return window.h = canvas.height = window.innerHeight - 200;
-  };
-
-  window.addEventListener('resize', resizeWindow, false);
-
-  window.onload = function() {
-    return setTimeout(resizeWindow, 0);
-  };
-
-  range = function(a, b) {
-    return (b - a) * Math.random() + a;
-  };
-
-  drawCircle = function(x, y, r, style) {
-    context.beginPath();
-    context.arc(x, y, r, 0, PI_2, false);
-    context.fillStyle = style;
-    return context.fill();
-     
-  };
-        
-
-  xpos = 0.5;
-
-  document.onmousemove = function(e) {
-    return xpos = e.pageX / w;
-  };
-
-  window.requestAnimationFrame = (function() {
-    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-      return window.setTimeout(callback, 1000 / 60);
-    };
-  })();
-
-  Confetti = (function() {
-    function Confetti() {
-      this.style = COLORS[~~range(0, 5)];
-      this.rgb = "rgba(" + this.style[0] + "," + this.style[1] + "," + this.style[2];
-      this.r = ~~range(2, 6);
-      this.r2 = 2 * this.r;
-      this.replace();
-    }
-
-    Confetti.prototype.replace = function() {
-      this.opacity = 0;
-      this.dop = 0.03 * range(1, 4);
-      this.x = range(-this.r2, w - this.r2);
-      this.y = range(-20, h - this.r2);
-      this.xmax = w - this.r;
-      this.ymax = h - this.r;
-      this.vx = range(0, 2) + 8 * xpos - 5;
-      return this.vy = 0.7 * this.r + range(-1, 1);
-    };
-
-    Confetti.prototype.draw = function() {
-      var _ref;
-      this.x += this.vx;
-      this.y += this.vy;
-      this.opacity += this.dop;
-      if (this.opacity > 1) {
-        this.opacity = 1;
-        this.dop *= -1;
-      }
-      if (this.opacity < 0 || this.y > this.ymax) {
-        this.replace();
-      }
-      if (!((0 < (_ref = this.x) && _ref < this.xmax))) {
-        this.x = (this.x + this.xmax) % this.xmax;
-      }
-      return drawCircle(~~this.x, ~~this.y, this.r, this.rgb + "," + this.opacity + ")");
-    };
-
-    return Confetti;
-
-  })();
-
-  confetti = (function() {
-    var _i, _results;
-    _results = [];
-    for (i = _i = 1; 1 <= NUM_CONFETTI ? _i <= NUM_CONFETTI : _i >= NUM_CONFETTI; i = 1 <= NUM_CONFETTI ? ++_i : --_i) {
-      _results.push(new Confetti);
-    }
-    return _results;
-  })();
-
-  window.step = function() {
-    var c, _i, _len, _results;
-    requestAnimationFrame(step);
-    context.clearRect(0, 0, w, h);
-    _results = [];
-    for (_i = 0, _len = confetti.length; _i < _len; _i++) {
-      c = confetti[_i];
-      _results.push(c.draw());
-    }
-    return _results;
-  };
-
-  step();
-
-}).call(this);
-    </script>
    
 </body>        
 </html>
