@@ -30,110 +30,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
-
-    <style>
-        
-#marco{
-    display:flex;
-    justify-content: center;
-    align-items: flex-end;
-  
-}
-
-.spider{
-    width: 15%;
-     position: absolute;
-    -webkit-animation: mover 17s  Ease infinite;
-    -ms-animation: mover 17s  Ease infinite;
-            animation: mover 17s  Ease infinite;
-}
-@-webkit-keyframes mover {
-     0%   {left:10%; top:-8%;}
-    25%  {left:23%; top:-10%;}
-    60%  {left:39%; top:-9%;}
-    75%  {left:28%; top:-6%;}
-    100% {left:10%; top:-8%;}
-}
-@-ms-keyframes mover {
-     0%   {left:10%; top:-8%;}
-    25%  {left:23%; top:-10%;}
-    60%  {left:39%; top:-9%;}
-    75%  {left:28%; top:-6%;}
-    100% {left:10%; top:-8%;}
-}
-@keyframes mover {
-     0%   {left:10%; top:-8%;}
-    25%  {left:23%; top:-10%;}
-    60%  {left:39%; top:-9%;}
-    75%  {left:28%; top:-6%;}
-    100% {left:10%; top:-8%;}
-}
-svg{
-    width: 80%;
-    min-width: 150px;
-}
-#pataI1{
-    -webkit-animation: girar 1s  Ease infinite;
-    -moz-animation: girar 1s  Ease infinite;
-     animation: girar 1s  Ease infinite;
-} 
- #pataI2, #pataD2{
-    -webkit-animation: girar 1.5s  Ease infinite;
-    -moz-animation: girar 1.5s  Ease infinite;
-    animation: girar 1.5s  Ease infinite;
-    animation-delay: 0.5s;
-}
-#pataI3{
-    -webkit-animation: girar 2s  Ease infinite;
-    -moz-animation: girar 2s  Ease infinite;
-     animation: girar 2s  Ease infinite;
-    animation-delay: 0.5s;
-}   
- #pataD3{
-    -webkit-animation: girar 1.8s  Ease infinite;
-    -moz-animation: girar 1.8s  Ease infinite;
-    animation-delay: 0.5s;
-}
- #pataD1{
-    -webkit-animation: girar 1.2s  Ease infinite;
-    -moz-animation: girar 1.2s  Ease infinite;
-    animation-delay: 0.8s;
-}
-   @-webkit-keyframes girar{
-        0%{
-            transform: rotate(2deg);
-        } 
-        50%{
-            transform: rotate(4deg);
-        }
-        100%{
-        	transform: rotate(2deg);
-        }
-    }
-  @-moz-keyframes girar{
-        0%{
-            transform: rotate(2deg);
-        }
-        50%{
-            transform: rotate(4deg);
-        }
-        100%{
-        	transform: rotate(2deg);
-        }
-    }
-     @keyframes girar{
-        0%{
-            transform: rotate(2deg);
-        }
-        50%{
-            transform: rotate(4deg);
-        }
-        100%{
-        	transform: rotate(2deg);
-        }
-    }
- 
-    </style>
     <script src="assets/js/jquery-1.12.0.min.js"></script>
 
     <script>
@@ -141,75 +37,51 @@ svg{
     var d = new Date();
     var n = monthNames[d.getMonth()];
     </script>
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" data-deferred="1"></script>
+    <style>
+        @keyframes sway { 
+        0% { transform: rotateZ(-15deg) rotateX(55deg);  }
+        30% { transform: rotateZ(20deg) rotateX(60deg); animation-timing-function: ease-in-out; }
+        60% { transform: rotateZ(-20deg) rotateX(55deg); animation-timing-function: ease-in-out;  }
+        100% { transform: rotateZ(0deg) rotateX(58deg); animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);  }
+        }
+        @keyframes fall { 
+            60% { -webkit-filter: drop-shadow(0px 60px 40px rgba(0,0,0,0)); }
+            100% { margin-top: 500px; 
+                -webkit-filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6)); }
+        }
+
+        div#fall-container { 
+          height: 300px;
+          position: relative;
+          perspective-origin: center;
+        /*  perspective: 1800px;*/
+        }
+        img.leaf { 
+          position: absolute;
+          width: 18%;
+          transform-origin: 0px -400px 0px;
+          animation-name: fall, sway;
+          animation-duration: 7s, 8s;
+          animation-fill-mode: both;
+          animation-timing-function: linear, ease-in-out;
+        }
+        #leaf1 { top: -160px; }
+        #leaf2 { top: -145px; left: 50%; animation-delay: 2s; transform: rotateX(58deg); }
+        #leaf3 { width: 18%; top: -110px; left: 12%; animation-delay: 3.2s; }
+        #leaf4 { width: 15%; top: -155px; left: 38%; animation-delay: 4.4s; }
+        #leaf5 { width: 18%; top: -118px; left: 70%; animation-delay: 2.25s; }
+        #leaf6 { width: 13%; top: -63px; left: 55%; animation-delay: 3.8s; }
+    </style>
 </head>
 
 <body>
 
     
 <div class="wrapper">
-        <header class="mt-0 pt-0">
-             
-            <div class="bg-cover clearfix pt-3">
-                <h2 class="logo" style="color: #FC5F1C; margin-top: 20px; font-size:8vw;">HAPPY   HALLOWEEN</h2>  
-            
+        <header class="mt-0 pt-0"> 
+            <div class="bg-cover clearfix pt-3"> 
 
- <div id="marco">
-<img class="img-fluid" src="http://evasantos.com/ilustraciones/halloween/halloween.svg"/>
-
-
-<svg class="spider" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 310.1 418">
-<path id="pataI3" d="M136.6,255.6c0,0-48.4,24-48.5,36.7c-0.1,10.8,33.6,27.3,33.6,27.3l-16.4,13.3l6.2,7l14.8-20.3
-	c0,0-31.1-17.5-30.6-27.9c0.6-11.6,43.9-30.7,43.9-30.7L136.6,255.6z"/>
-<path id="pataI2" d="M137,249.8c0,0-54.2-20.8-65.7-13.2c-12.2,8-10.7,57.4-10.7,57.4l-17,10.1l3.2,7.3L64.7,298
-	c0,0-1.3-50,10.5-57.4c10.8-6.8,60,15.2,60,15.2L137,249.8z"/>
-<path id="pataI1" d="M135.5,251.9c0,0-40-44.8-55.8-43.2C64.8,210.2,41,254,41,254L53,271.2l-7,3.1l-9.8-22.6c0,0,26.3-48.3,42.7-50
-	c15.1-1.5,59.1,46.3,59.1,46.3L135.5,251.9z"/>
-<path id="pataD1" d="M148.3,250.1c0,0,18.4-53.3,31.5-56.4c14.4-3.5,52.6,31.8,52.6,31.8l24.3-3.5l-1.2-7.4l-22.6,6.2
-	c0,0-39.5-36.7-55-32.8c-14.8,3.7-35.3,59.9-35.3,59.9L148.3,250.1z"/>
-<path id="pataD2" d="M142.6,251.7c0,0,41.9-38.7,57.4-32.8c12.6,4.8,17.2,51.5,17.2,51.5l20.5,4.7l-2.6,8.6l-21.9-9.4
-	c0,0-4-45-15.4-49.7c-13.2-5.5-50.6,29-50.6,29L142.6,251.7z"/>
-<path id="pataD3" d="M150.1,260.3c0,0,39,8.8,43.3,19.9c3.4,9-15.2,35.5-15.2,35.5l15.6,6.2l-3.9,6.6L171.1,318
-	c0,0,20.3-26.8,16.9-36.1c-3.6-10-38.4-18.5-38.4-18.5L150.1,260.3z"/>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="397.3499" y1="-294.1096" x2="338.9883" y2="-303.9042" gradientTransform="matrix(0.9959 -9.096393e-002 -9.096393e-002 -0.9959 -242.2795 -11.509)">
-	<stop  offset="0" style="stop-color:#FFFFFF"/>
-	<stop  offset="0.1149" style="stop-color:#C9C9C9"/>
-	<stop  offset="0.2417" style="stop-color:#949494"/>
-	<stop  offset="0.3705" style="stop-color:#676767"/>
-	<stop  offset="0.4987" style="stop-color:#424242"/>
-	<stop  offset="0.626" style="stop-color:#252525"/>
-	<stop  offset="0.7525" style="stop-color:#101010"/>
-	<stop  offset="0.8776" style="stop-color:#040404"/>
-	<stop  offset="1" style="stop-color:#000000"/>
-</linearGradient>
-<path fill="url(#SVGID_1_)" d="M137.5,229.8c16.3-1.5,30.7,9,31.9,23.3c1.3,14.4-10.8,27.2-27.2,28.7c-16.3,1.5-30.7-9-31.9-23.3
-	C109,244.2,121.2,231.4,137.5,229.8z"/>
-<ellipse fill="#FCFCFC" cx="128.7" cy="263.9" rx="7.4" ry="7.6"/>
-<ellipse fill="#FCFCFC" cx="153.7" cy="261.6" rx="7.4" ry="7.6"/>
-<ellipse cx="131.7" cy="263.1" rx="4.1" ry="4.4"/>
-<ellipse cx="151.8" cy="261.7" rx="4.1" ry="4.4"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M139.1,233.7"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M133.7-5.9c1.6,97.6,1.6,245.9,1.6,245.9"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M112,259.7c0,0-5.5-3.7-8.6,1"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M114.4,263.1c-3.1-0.8-4.4,0.2-5.5,1"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M117,243.6c0,0-3.1-5.7-7.3-4.7"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M128.7,276.9c0,0-2.9,2.3-3.9,4.1"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M131.9,232.9c-0.5-4.1-5.5-7.8-7-7.8"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M139.7,231.4c0-2.6,0.5-5.2,2.3-6.5"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M158.1,237.6c0.8-2.9,2.3-5.5,4.9-6.2"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M167,251.7c2.6-2.1,4.7-2.1,6-1.3"/>
-<path fill="none" stroke="#000000" stroke-width="0.7805" stroke-miterlimit="10" d="M165.9,261.6c0,0,5.2-1,6.2,1.8"/>
-<path fill="#FFFFFF" stroke="#020000" stroke-width="0.7805" stroke-miterlimit="10" d="M133.1,275.6c-1.8,2.3,0.2,6.5,2.6,7.6
-	c2.3,1.1,0.2-3.1,1-5.7C137.5,274.9,133.1,275.6,133.1,275.6z"/>
-<path fill="#FFFFFF" stroke="#020000" stroke-width="0.7805" stroke-miterlimit="10" d="M151.1,274.9c1.8,2.3-0.2,6.5-2.6,7.6
-	c-2.3,1.1-0.2-3.1-1-5.7C146.7,274.2,151.1,274.9,151.1,274.9z"/>
-<path fill="none" stroke="#020000" stroke-width="0.7805" stroke-miterlimit="10" d="M156.5,274.1c1.3,0.5,3.7,3.1,3.7,4.1"/>
-</svg>
-</div>
- <h2 class="logo" style="color: #FC5F1C; margin-top: 20px;">Ealing Pet Shop and Grooming Salon</h2>   
-                
-
+                <h2 class="logo" style="color:#ed9c11; margin-top: 20px;">Ealing Pet Shop and Grooming Salon</h2>  
                 <nav class="nav nav-fill mx-auto">
                     <li class="nav-item">
                         <a class="nav-link" aria-label="Facebook" href="https://www.facebook.com/ealingpetshop/" target="_blank"><i
@@ -222,7 +94,14 @@ svg{
                         <a class="nav-link" aria-label="Online store" href="http://www.petyourpet.co.uk/" target="_blank"><i class="fas fa-shopping-cart fa-fw"></i></a>
                     </li>
                 </nav>
-
+                <div id="fall-container">
+                    <img class="leaf" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/leaf.png" alt>
+                    <img class="leaf" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/leaf2.png" alt id="leaf2">
+                    <img class="leaf" src=https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/leaf4.png alt id="leaf3">
+                    <img class="leaf" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/leaf5.png" alt id="leaf4">
+                    <img class="leaf" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/leaf7.png" alt id="leaf5">
+                    <img class="leaf" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/leaf6.png" alt id="leaf6">
+                </div>
                 <input type="text" id="nav-search" class="nav-search mx-auto" name="" class="form-control">
                 <div class="ml-0 mr-0 pb-1">
                     <nav class="navbar navbar-expand-md">
@@ -262,7 +141,7 @@ svg{
                         <img class="card-img" src="assets/images/front/dogvalentine4.jpg" alt="Ealing Grooming Salon">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Grooming Salon</h2>
-                            <a href="services.html" aria-label="Read more" class="btn" style="background-color:#FC5F1C;">READ MORE</a>
+                            <a href="services.html" aria-label="Read more" class="btn" style="background-color:#ed9c11;">READ MORE</a>
                         </div>
                     </div>
                 </div>
@@ -271,7 +150,7 @@ svg{
                           <img class="card-img" src="assets/images/front/front_food.jpg" alt="Ealing Pet Shop">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Pet Shop</h2>
-                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#FC5F1C;">SHOP NOW</a>
+                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#ed9c11;">SHOP NOW</a>
                         </div>
                       
                     </div>
@@ -396,11 +275,11 @@ svg{
 
                     <div class="col-md-4 pl-4 mb-4">
                         <div class="card">
-                            <img class="card-img-top" src="assets/images/front/petbeds.jpg" alt="Dog beds">
+                            <img class="card-img-top" src="assets/images/front/bugalugs.jpg" alt="Dog beds">
                             <div class="card-body bg-gray cus-pd2 cus-arrow-up">
                                 <p><small><script>document.write(n)</script>, 2022</small></p>
-                                <h3>Beds to love!</h3>
-                                <p>We offer a wide selection of beds that are comfy, supportive and made to last. Discover our Luxury Collection from @georgebarclay. All available in the store!</p>
+                                <h3>@bugalugspetcare</h3>
+                                <p>New and exciting UK brand born due to our love for four legged friends. With an array of products including shampoo, nose and paw balm and detangling spray for those bad hair days there is something for every hound.</p>
                             </div>
                         </div>
                     </div>
