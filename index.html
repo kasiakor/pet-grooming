@@ -174,14 +174,131 @@ main .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-}</style>
+}
+.flower-container {
+  background-color: #2196F3;
+  display: flex;
+  justify-content: center;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.flower {
+  animation: swing var(--speed) ease infinite alternate both;
+  position: relative;
+  transform-origin: 50% 100%;
+  width: 2rem;
+  &::before {
+    animation: before 3s ease infinite alternate both;
+    bottom: 7rem;
+    content: "✿";
+/*    color: hsl(var(--flower), 67%, 30%);*/
+      color: #fbc02d;
+    font-size: 4rem;
+    left: 0;
+    position: absolute;
+
+  }
+  &::after {
+    bottom: -3rem;
+/*    color: hsl(var(--stem), 67%, 20%);*/
+      color: #1fb722;
+    content: "(";
+    font-size: 6rem;
+    font-weight: bold;
+    left: 0;
+    position: absolute;
+    transform: rotate(60deg) skew(60deg) scale(1.2, 1.8);
+  }
+}
+
+.flower:nth-child(3n) {
+  animation: swingLeft var(--speed) ease infinite alternate both;
+  &::before {
+    animation: beforeLeft var(--speed) ease infinite alternate both;
+  }
+  &::after {
+    content: ")";
+    left: 1.5rem;
+    bottom: -4.5rem;
+  }
+}
+@keyframes swingLeft {
+  0% {
+    transform: var(--transform) rotate(0deg);
+  }
+  100% {
+    transform: var(--transform) rotate(7deg);
+  }
+}
+
+@keyframes beforeLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: var(--transform) rotate(0deg);
+  }
+  100% {
+    transform: var(--transform) rotate(-7deg);
+  }
+}
+
+@keyframes before {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-7deg);
+  }
+    
+    </style>
     </head>
 
 <body>
 <div class="wrapper"> 
         <header class="mt-0 pt-0"> 
-            <h2 class="logo text" style="color:#D6001C;">Ealing Pet Shop and Grooming Salon</h2>
+            <h2 class="logo text" style="color:#2196F3;">Ealing Pet Shop and Grooming Salon</h2>
             <div class="bg-cover clearfix pt-3"> 
+                 <div class="flower-container">
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+</div>
                 <nav class="nav nav-fill mx-auto">
                     
                     <li class="nav-item">
@@ -234,7 +351,7 @@ main .card-back {
                         <img class="card-img" src="assets/images/front/dogvalentine4.jpg" alt="Ealing Grooming Salon">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Grooming Salon</h2>
-                            <a href="services.html" aria-label="Read more" class="btn" style="background-color:#D6001C;">READ MORE</a>
+                            <a href="services.html" aria-label="Read more" class="btn" style="background-color:#2196F3;">READ MORE</a>
                         </div>
                     </div>
                 </div>
@@ -243,7 +360,7 @@ main .card-back {
                           <img class="card-img" src="assets/images/front/front_food.jpg" alt="Ealing Pet Shop">
                         <div class="mt-5 card-img-overlay d-flex align-items-center justify-content-center flex-column">
                             <h2>Ealing Pet Shop</h2>
-                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#D6001C;">SHOP NOW</a>
+                            <a href="http://www.petyourpet.co.uk/" aria-label="Shop now" target="_blank" class="btn" style="background-color:#2196F3;">SHOP NOW</a>
                         </div>
                       
                     </div>
@@ -422,5 +539,13 @@ toggleButton.addEventListener("click", function () {
 		: (this.textContent = "Night");
 });
     </script>
+            <script>
+        const flowers = document.querySelectorAll(".flower");
+flowers.forEach((flower) => {
+  flower.style.setProperty("--speed",(2 + 2 * Math.random()) + "s");
+  flower.style.setProperty("--transform", "scale(" + (0.4 + 0.5 * Math.random()) + ")");
+  flower.style.setProperty("--stem",(110 + 40 * Math.random()));
+  flower.style.setProperty("--flower",(250 + 180 * Math.random()));
+});</script>
 </body>        
 </html>

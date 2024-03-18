@@ -56,6 +56,89 @@
         opacity: 0;
       }
     }
+        .flower-container {
+  background-color: #2196F3;
+  display: flex;
+  justify-content: center;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.flower {
+  animation: swing var(--speed) ease infinite alternate both;
+  position: relative;
+  transform-origin: 50% 100%;
+  width: 2rem;
+  &::before {
+    animation: before 3s ease infinite alternate both;
+    bottom: 7rem;
+    content: "✿";
+/*    color: hsl(var(--flower), 67%, 30%);*/
+      color: #fbc02d;
+    font-size: 4rem;
+    left: 0;
+    position: absolute;
+
+  }
+  &::after {
+    bottom: -3rem;
+/*    color: hsl(var(--stem), 67%, 20%);*/
+      color: #1fb722;
+    content: "(";
+    font-size: 6rem;
+    font-weight: bold;
+    left: 0;
+    position: absolute;
+    transform: rotate(60deg) skew(60deg) scale(1.2, 1.8);
+  }
+}
+
+.flower:nth-child(3n) {
+  animation: swingLeft var(--speed) ease infinite alternate both;
+  &::before {
+    animation: beforeLeft var(--speed) ease infinite alternate both;
+  }
+  &::after {
+    content: ")";
+    left: 1.5rem;
+    bottom: -4.5rem;
+  }
+}
+@keyframes swingLeft {
+  0% {
+    transform: var(--transform) rotate(0deg);
+  }
+  100% {
+    transform: var(--transform) rotate(7deg);
+  }
+}
+
+@keyframes beforeLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: var(--transform) rotate(0deg);
+  }
+  100% {
+    transform: var(--transform) rotate(-7deg);
+  }
+}
+
+@keyframes before {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-7deg);
+  }
     </style>
 </head>
 
@@ -122,35 +205,7 @@
                 </ul>
             </div>
 
-            <style>
-            .penguin {
-              width: 25px;
-              height: 45px;
-              bottom: 50%;
-              position: fixed;
-              animation: walk 25s linear infinite;
-              z-index: 1000;
-
-            }
-
-            @keyframes walk {
-              0%, 100% { 
-                left: 0;    
-                transform: translatex(-50%) scalex(-1); 
-              }
-               49% { 
-                left: 100%; 
-                transform: translatex(-50%) scalex(-1); 
-              }
-                50% { 
-                 left: 100%; 
-                 transform: translatex(-50%) scalex(1);  
-              }
-                 99% { 
-                  left: 0;   
-                  transform: translatex(-50%) scalex(1);      }
-            }
-            </style>
+           
 
         </header>
 
@@ -160,22 +215,39 @@
             <div class="container">
                 <div class="row">
                      <div class="col-lg-9 pr-5">
-                    <div class="media my-5">
-                    
-                        <div class="bbg media-body"> 
-                            <h5 class="mb-0 valentina text-center" style="color: #D6001C; font-weight: 600; font-family:inherit;">Happy New Year !!!</h5>
-                                <div class="row mt-5">
-                            <div class="col-md-6 mx-auto">
-                                <div class="team-card mb-5 text-center">
-                                   <div class="penguin">
-                                    <img src="https://nervin.net/img/ping.gif">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-           
+              
+             <div class="flower-container">
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+</div>
                   
                    
                         <h3 style="text-align: center;">Engraving Services Available Now!</h3>
@@ -307,6 +379,14 @@
         e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
         })();
         </script>
+        <script>
+        const flowers = document.querySelectorAll(".flower");
+flowers.forEach((flower) => {
+  flower.style.setProperty("--speed",(2 + 2 * Math.random()) + "s");
+  flower.style.setProperty("--transform", "scale(" + (0.4 + 0.5 * Math.random()) + ")");
+  flower.style.setProperty("--stem",(110 + 40 * Math.random()));
+  flower.style.setProperty("--flower",(250 + 180 * Math.random()));
+});</script>
     </div>
 </body>
 
